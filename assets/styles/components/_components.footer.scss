@@ -1,0 +1,41 @@
+.c-global-footer {
+
+  padding-top: 25px;
+  background: transparent url(/assets/img/cta_bg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+
+  &__inner {
+    background: #000;
+    background: rgba(#000,0.8);
+    color: rgba(#fff,0.9);
+    padding: 2rem;
+  }
+
+  &__link {
+    color: rgba(#fff,0.9);
+  }
+
+  &__list {
+    list-style-type: none;
+    @include mq($from: large) {
+      text-align: right;
+    }
+  }
+
+  &__item {
+    display: block;
+    @include mq($from: large) {
+      display: inline-block;
+      margin-left: 1.5em;
+    }
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  &__icon {
+    margin-right: 0.5em;
+  }
+
+}

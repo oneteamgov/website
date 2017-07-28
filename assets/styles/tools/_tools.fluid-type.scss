@@ -1,0 +1,49 @@
+//  Inspired by Mike Riethmuller's Precise control over responsive typography
+//  http://madebymike.com.au/writing/precise-control-responsive-typography/
+
+// html {
+//   @include fluid-type(font-size, 320px, 1366px, 14px, 18px);
+// }
+//
+
+// Multiple properties with same values
+// h1 {
+//   @include fluid-type(padding-bottom padding-top, 20em, 70em, 2em, 4em);
+// }
+
+/**
+ * flue-type based sizing of a property
+ * @param   $properties LIST           the css property(s) you wish to size relatively with min/max values
+ * @param   $min-vw     px value       the width at which the viewport needs to be for the scaling to start
+ * @param   $max-vw     px value       the width at which the viewport needs to be for the scaling to stop
+ * @param   $min-value  px value       the minimum size in pixels you wish to property to be
+ * @param   $max-value  px value       the maximum size in pixels you wish to property to be
+ * @type {[type]}
+ */
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media screen and (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media screen and (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+
+@mixin set-fluid-property(
+  $property,
+  $min-width: map-get($fluid-config,min-width),
+  $max-width: map-get($fluid-config,max-width),
+  $min-size: map-get($fluid-config,min-size),
+  $max-size: map-get($fluid-config,max-size)
+) { @include fluid-type($property, $min-width, $max-width,$min-size, $max-size); }
+
+// @function calc-fluid-rem($pixelsize: $)

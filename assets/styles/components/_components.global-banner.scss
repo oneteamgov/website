@@ -1,0 +1,18 @@
+.c-global-banner {
+  padding: 8px 0;
+  background: transparent url(/assets/img/cta_bg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  &__inner {
+    background: transparent url(/assets/img/c-global-banner-bg.jpg) no-repeat 50% 5%;
+    background-size: cover;
+    height: 25vh;
+    max-height: 150px;
+    @include mq($from: large) {
+      min-height: 250px;
+    }
+    @include mq($from: xlarge) {
+      min-height: 375px;
+    }
+  }
+  /* blah */
+}

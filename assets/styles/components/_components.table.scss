@@ -1,0 +1,49 @@
+.c-schedule {
+
+  width: 100%;
+  background: rgba(#fff,0.6);
+  border: 2px solid #000;
+  color: #000;
+
+  @include mq($from: large) {
+    font-size: 1.4vw;
+  }
+
+  $component: #{&};
+
+  &__cell {
+    padding: 0.5em;
+    &--heading {
+      text-align: left;
+    }
+    border: 1px dotted #333;
+    &--time {
+      width: 25%;
+      text-align: right;
+      padding-right: 1em;
+    }
+    &--activity {
+      padding-left: 1em;
+    }
+    &--heading {
+      background: #000;
+      background-color: rgba(#000,0.8);
+      color: #fff;
+      border-bottom: 0;
+    }
+  }
+  &__row {
+    &:nth-child(odd) {
+      background: rgba(#000,0.05);
+    }
+  }
+  tbody {
+    #{$component}__row {
+      &:first-child {
+        #{$component}__cell {
+          border-top: 0;
+        }
+      }
+    }
+  }
+}

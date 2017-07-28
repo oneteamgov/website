@@ -1,0 +1,7 @@
+.u-tar {
+  &\@medium {
+    @include mq($from: medium) {
+      text-align: right;
+    }
+  }
+}

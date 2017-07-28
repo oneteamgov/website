@@ -1,0 +1,32 @@
+.c-primary-heading {
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff8d1b+0,fb1cc1+100 */
+  background: #ff8d1b; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #ff8d1b 0%, #fb1cc1 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #ff8d1b 0%,#fb1cc1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #ff8d1b 0%,#fb1cc1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8d1b', endColorstr='#fb1cc1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  color: #fff;
+  text-align: center;
+  padding: 1.4rem 0;
+
+  @include mq($until: medium) {
+    margin-top: 1rem;
+  }
+
+  @include mq($from: medium) {
+    padding: 2rem 0;
+    text-align: left;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 2rem;
+
+    @include mq($from: medium) {
+      font-size: 4.3vw;
+    }
+
+  }
+
+}
