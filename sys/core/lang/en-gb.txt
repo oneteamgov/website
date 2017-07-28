@@ -372,5 +372,6 @@
     "Markdown formatting": "Markdown formatting",
     "Enable keyboard shortcuts": "Enable keyboard shortcuts",
     "Skip region list for just one region": "Skip region list for just one region",
-    "%s%s is up to date%s": "%s%s is up to date%s"
+    "%s%s is up to date%s": "%s%s is up to date%s",
+    "Remove image": "Remove image"
 }
