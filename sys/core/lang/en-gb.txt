@@ -373,5 +373,19 @@
     "Enable keyboard shortcuts": "Enable keyboard shortcuts",
     "Skip region list for just one region": "Skip region list for just one region",
     "%s%s is up to date%s": "%s%s is up to date%s",
-    "Remove image": "Remove image"
+    "Remove image": "Remove image",
+    "Email incomplete or already in use.": "Email incomplete or already in use.",
+    "Your passwords must match and meet complexity requirements.": "Your passwords must match and meet complexity requirements.",
+    "Editing My Account": "Editing My Account",
+    "First name": "First name",
+    "Last name": "Last name",
+    "Change password": "Change password",
+    "New password": "New password",
+    "Repeat new password": "Repeat new password",
+    "Add User": "Add User",
+    "Adding a New User Account": "Adding a New User Account",
+    "User details": "User details",
+    "Repeat the password": "Repeat the password",
+    "Send welcome email": "Send welcome email",
+    "Create user": "Create user"
 }
