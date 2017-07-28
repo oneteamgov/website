@@ -14,7 +14,7 @@
 
 .c-global-header {
   @include mq($until: medium) {
-    background: transparent url(/assets/img/header_bg_until_medium.jpg) no-repeat 50% 50%;
+    background: transparent url(/public/images/header_bg_until_medium.jpg) no-repeat 50% 50%;
     background-size: cover;
     text-align: center;
     padding-bottom: 2px;
