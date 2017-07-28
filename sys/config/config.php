@@ -1,23 +1,33 @@
 <?php
 
-    require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/sys/vendor/autoload.php';
     $dotenv = new Dotenv\Dotenv($_SERVER['DOCUMENT_ROOT']);
     $dotenv->load();
 
-    switch($_SERVER['SERVER_NAME']) {
+    // switch($_SERVER['SERVER_NAME']) {
+    //
+    //     case 'oneteamgov':
+    //         include(__DIR__.'/config.oneteamgov.php');
+    //         break;
+    //
+    //     default:
+    //         include('config.production.php');
+    //         break;
+    // }
 
-        case 'oneteamgov':
-            include(__DIR__.'/config.oneteamgov.php');
-            break;
+    define('PERCH_SITEPATH', getenv('PERCH_SITEPATH'));
+  	define('PERCH_SCHEDULE_SECRET', getenv('PERCH_SITEPATH'));
 
-        default:
-            include('config.production.php');
-            break;
-    }
+    // database config
+  	define('PERCH_DB_USERNAME', getenv('PERCH_DB_USERNAME'));
+  	define('PERCH_DB_PASSWORD', getenv('PERCH_DB_PASSWORD'));
+  	define('PERCH_DB_SERVER', 	getenv('PERCH_DB_SERVER'));
+  	define('PERCH_DB_DATABASE', getenv('PERCH_DB_DATABASE'));
+  	define('PERCH_DB_PREFIX', 	getenv('PERCH_DB_PREFIX'));
 
     define('PERCH_LICENSE_KEY', getenv('PERCH_LICENSE_KEY'));
-    define('PERCH_EMAIL_FROM', 'mail@paulsmith.site');
-    define('PERCH_EMAIL_FROM_NAME', 'Paul Smith');
+    define('PERCH_EMAIL_FROM', getenv('PERCH_EMAIL_FROM'));
+    define('PERCH_EMAIL_FROM_NAME', getenv('PERCH_EMAIL_FROM_NAME'));
 
     define('PERCH_LOGINPATH', '/sys');
     define('PERCH_PATH', str_replace(DIRECTORY_SEPARATOR.'config', '', __DIR__));
