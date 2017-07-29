@@ -4,16 +4,21 @@
     <meta charset="utf-8" />
 	<title><?php perch_pages_title(); ?></title>
 	<?php perch_page_attributes(); ?>
+  <?php perch_layout('global/head'); ?>
 </head>
 <body>
+
+<?php perch_layout('global/header'); ?>
+
     <h1><?php perch_content('Main heading'); ?></h1>
 
-    <?php 
+    <?php
     	perch_pages_navigation([
     		'levels' => 1,
-    	]); 
+    	]);
     ?>
 
     <?php perch_content('Intro'); ?>
+<?php perch_layout('global/footer'); ?>
 </body>
 </html>

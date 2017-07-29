@@ -22,6 +22,13 @@
     border-bottom: 3px solid black;
   }
 
+  &__body {
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+    margin-bottom: 2rem;
+  }
+
   @include mq($from: medium) {
     padding-left: 0;
     padding-right: 0;
@@ -40,14 +47,18 @@
 
   @include mq($from: large) {
 
-    padding: 2.6rem 0;
+    &:first-of-type {
+      padding-top: 2.6rem;
+    }
+
+    padding: 0 0 2.6rem 0;
 
     &__heading {
       font-size: 2.3rem;
       border-bottom: 6px solid black;
     }
 
-    font-size: 1.6vw;
+    font-size: 1.8vw;
     line-height: 1.425;
 
     &--border-bottom {
@@ -58,6 +69,12 @@
       width: 100%;
       display: block;
     }
+
+  }
+
+  @include mq($from: xlarge) {
+
+    font-size: 1.4vw;
 
   }
 
