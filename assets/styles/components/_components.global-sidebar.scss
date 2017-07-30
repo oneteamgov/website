@@ -1,0 +1,13 @@
+.c-global-sidebar {
+
+  &__inner {
+    background: lighten(#dfdfdf,7%);
+    padding: 30px;
+    border-radius: 15px;
+  }
+
+  @include mq($from: large) {
+    margin: 3vw 0;
+  }
+
+}
