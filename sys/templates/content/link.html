@@ -1,2 +1,5 @@
 <a href="<perch:content id="link_url" type="text" label="Link URL" required="true" title="true" />" class="c-link c-link--<perch:content id="link_class" type="select" label="Type"
-options="Default|default, Button|button, Continue|continue" allowempty="false" required="true" />"><perch:content id="link_text" type="text" label="Link text" required="true" title="true" /><perch:if id="link_class" match="eq" value="continue"><svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg></perch:if></a>
+options="Default|default, Button|button, Continue|continue" allowempty="false" required="true" />"><span class="c-link__inner"><perch:content id="link_text" type="text" label="Link text" required="true" title="true" />
+<perch:if id="link_class" match="eq" value="continue"><svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg></perch:if>
+<perch:if id="link_class" match="eq" value="button"><svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg></perch:if>
+</span></a>

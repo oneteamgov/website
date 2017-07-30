@@ -2,9 +2,33 @@
 
   @include mq($from: large) {
     margin: 3vw 0;
-    background: lighten(#dfdfdf,7%);
-    padding: 30px;
-    border-radius: 15px;
+    // background: lighten(#dfdfdf,9%);
+    border-radius: 10px;
+    // padding: 1rem 1.5rem;
+  }
+
+  &__inner {
+    @include mq($until: medium) {
+      padding: 2rem;
+    }
+  }
+
+  &__section {
+    margin-bottom: 2rem;
+    // border: 1px solid #ccc;
+    &-body {
+      margin-bottom: 1rem;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__heading {
+    color: #333;
+    font-size: 1.6rem;
+    padding: 0 0 0.5rem 0;
+    border-bottom: 1px solid #ccc;
   }
 
 }

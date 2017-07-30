@@ -1,0 +1,37 @@
+.c-reading-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  &__heading {
+    margin-bottom: 0 0 0.15rem 0;
+    font-weight: bold;
+
+  }
+  &__link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__desc {
+    color: #555;
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__item {
+    padding: 1rem 0;
+    border-bottom: 1px dotted #ccc;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+    &:nth-child(even) {
+      background: lighten(#dfdfdf,11%);
+    }
+  }
+}

@@ -65,6 +65,13 @@ $otg-use-markup-fix: false !default;
   }
 }
 
+.o-layout--huge {
+  margin-left: -$otg-spacing-unit-huge*1.5;
+  > .o-layout__item {
+    padding-left: $otg-spacing-unit-huge*1.5;
+  }
+}
+
 .o-layout--flush {
   margin-left: 0;
   > .o-layout__item {

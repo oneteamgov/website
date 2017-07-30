@@ -1,29 +1,59 @@
 .c-link {
-
+  .icon {
+    width: 1em;
+    height: 1em;
+    margin-left: 0.25em;
+  }
 }
 
 .c-link--button {
   display: block;
-  background: lighten(#ccc,12%);
-  background: darken(#F9743B,20%);
-  background: #000;
+  // background: lighten(#ccc,12%);
+  // background: darken(#F5526D,20%);
+  background: darken(#F5526D,0%);
+  background: transparent url(/public/images/cta_bg.jpg) no-repeat 25% 50%;
+  // background-size: auto;
+  // border: 3px solid #F5526D;
   color: #fff;
+  // color: #000;
   font-weight: bold;
-  padding: 0.5em 1em;
-  font-family: roboto;
+  font-family: $webfont-a;
   text-decoration: none;
   border-radius: 0.35em;
+  overflow: hidden;
   @include mq($from: medium) {
     display: inline-block;
   }
+
+  .c-link__inner {
+    background: rgba(#000,0.1);
+    padding: 0.5em 1em;
+    display: inline-block;
+  }
+
+  &:hover {
+    .c-link__inner {
+      background: rgba(#000,0.05);
+    }
+  }
+
 }
 
 .c-link--continue {
   font-family: $webfont-a;
   font-weight: bold;
-  .icon {
-    width: 1em;
-    height: 1em;
-    margin-left: 0.25em;
+}
+
+.c-link--cta {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 0.5em 0.25em;
+  border-radius: 10px;
+  font-size: 1.1em;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
   }
 }
