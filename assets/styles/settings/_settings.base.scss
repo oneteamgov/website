@@ -1,0 +1,37 @@
+$otg-font-size: 16px;
+$otg-font-size-max: 22px;
+$otg-line-height: 24px;
+$otg-spacing-unit: 1rem;
+$otg-spacing-unit-tiny: floor($otg-spacing-unit/4);
+$otg-spacing-unit-small: floor($otg-spacing-unit/2);
+$otg-spacing-unit-large: floor($otg-spacing-unit*1.5);
+$otg-spacing-unit-huge: floor($otg-spacing-unit*2.5);
+$otg-base-radius: 0.175em;
+
+$otg-use-markup-fix: false !default;
+$otg-oldIE: false !default;
+
+$webfont-a: 'Roboto', sans-serif;
+
+$mq-breakpoints: (
+	small:  	320px,
+	medium:  	740px,
+	large: 		980px,
+	xlarge:   1300px
+);
+
+$colours: (
+	grey: (
+		one: #F2F2F2
+	),
+	yellow: (
+		one: #F6EEDF
+	),
+	white: (
+		one: #ffffff
+	)
+);
+
+$page: (
+	background: map-value($colours,(yellow,one))
+);

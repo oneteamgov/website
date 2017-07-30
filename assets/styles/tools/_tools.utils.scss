@@ -1,0 +1,77 @@
+
+/// ---------------------------------------------------------------
+/// @function strip-unit
+/// Remove the unit of a length
+/// ---------------------------------------------------------------
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+/// ---------------------------------------------------------------
+/// https://css-tricks.com/snippets/sass/strip-unit-function/
+/// ---------------------------------------------------------------
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+/// ---------------------------------------------------------------
+/// @function map-value
+/// Returns a value from a nested map.
+/// ---------------------------------------------------------------
+/// @access public
+/// @param {Map | Number | String} $map-value - A map or value
+/// which is checked recursively.
+///
+/// @param {List} $map-value - The list of keys in sequential
+/// order.
+/// @return {Number | String} - The value of the final key.
+///
+/// @example
+/// map-value($map, (key1, key2));
+/// ---------------------------------------------------------------
+@function map-value($map-value, $keys, $prev-key: null) {
+
+	@if(type-of($map-value) != map or length($keys) == 0) {
+
+		@if($map-value == null) {
+			@error '"#{$prev-key}" not found in map-value keys.';
+		}
+
+		@return $map-value;
+	}
+
+	$curr-key: nth($keys, 1);
+	@return map-value(map-get($map-value, $curr-key), slice($keys, 2), $curr-key);
+}
+
+/// ---------------------------------------------------------------
+/// @function slice
+/// Returns a new list partial from a given list.
+/// ---------------------------------------------------------------
+///
+/// @param {List} $list - The target list from which to derive a
+/// partial list.
+/// @param {Number} $start - The start index of the slice operation.
+///
+/// @return {Number} $end - The end index of the slice
+/// operation (Optional, defaults to list length).
+///
+/// @example
+/// slice($list, 1, 2);
+/// ---------------------------------------------------------------
+@function slice($list, $start: 1, $end: length($list)) {
+	$result: ();
+
+	@if $start > $end or $start < 1 or $end < 1 or $start > length($list) or $end > length($list)  {
+		@return $result;
+	}
+	@else {
+
+		@for $i from $start through $end {
+			$result: append($result, nth($list, $i));
+		}
+	}
+
+	@return $result;
+}

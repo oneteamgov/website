@@ -1,3 +1,4 @@
 <?php
-	$apps_list = [ 
+	$apps_list = [
+		'perch_blog'
 	];

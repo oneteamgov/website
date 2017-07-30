@@ -1,0 +1,25 @@
+.o-banner-text {
+  line-height: 1;
+  font-family: $webfont-a;
+  &__line {
+    display: block;
+    line-height: 1.1;
+  }
+  &--bold & {
+    &__line {
+      font-weight: bold;
+    }
+  }
+}
+
+.o-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  &--twitter {
+    fill: #5DA9DD;
+  }
+}
