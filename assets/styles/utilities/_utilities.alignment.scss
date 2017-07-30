@@ -1,4 +1,10 @@
 .u-tar {
+  text-align: right;
+  &\@small {
+    @include mq($from: small) {
+      text-align: right;
+    }
+  }
   &\@medium {
     @include mq($from: medium) {
       text-align: right;

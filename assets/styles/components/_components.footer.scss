@@ -1,14 +1,27 @@
 .c-global-footer {
 
-  padding-top: 25px;
-  background: transparent url(/public/images/cta_bg.jpg) no-repeat 50% 50%;
-  background-size: cover;
+  &__content {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #fff;
+    border-bottom: 1px solid rgba(#fff,0.2);
+  }
+
+  &__bar {
+    padding-top: 10px;
+    background: transparent url(/public/images/cta_bg.jpg) no-repeat 50% 50%;
+    background-size: cover;
+  }
 
   &__inner {
     background: #000;
     background: rgba(#000,0.8);
     color: rgba(#fff,0.9);
-    padding: 2rem;
+    padding: 1.5rem;
+    @include mq($from: medium) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__link {

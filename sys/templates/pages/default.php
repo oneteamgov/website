@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title><?php perch_pages_title(); ?></title>
 	<?php perch_page_attributes(); ?>
   <?php perch_layout('global/head'); ?>
