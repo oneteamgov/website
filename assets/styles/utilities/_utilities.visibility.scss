@@ -1,0 +1,26 @@
+.u-visuallyhidden {
+  @include visuallyhidden;
+  @if (variable-exists(mq-breakpoints)) {
+    @each $otg-bp-name, $otg-bp-value in $mq-breakpoints {
+      @include mq($from: $otg-bp-name) {
+        &\@#{$otg-bp-name} {
+          @include visuallyhidden;
+        }
+      }
+    }
+  }
+}
+
+.u-visuallyhidden.u-focusable:active,
+.u-visuallyhidden.u-focusable:focus {
+  clip:auto;
+  height:auto;
+  margin:0;
+  overflow:visible;
+  position:static;
+  width:auto;
+}
+
+.u-invisible {
+  visibility:hidden
+}

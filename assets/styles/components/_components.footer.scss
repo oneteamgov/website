@@ -1,0 +1,54 @@
+.c-global-footer {
+
+  &__content {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #fff;
+    border-bottom: 1px solid rgba(#fff,0.2);
+  }
+
+  &__bar {
+    padding-top: 10px;
+    background: transparent url(/public/images/cta_bg.jpg) no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  &__inner {
+    background: #000;
+    background: rgba(#000,0.8);
+    color: rgba(#fff,0.9);
+    padding: 1.5rem;
+    @include mq($from: medium) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__link {
+    color: rgba(#fff,0.9);
+  }
+
+  &__list {
+    list-style-type: none;
+    @include mq($from: large) {
+      text-align: right;
+    }
+  }
+
+  &__item {
+    display: block;
+    @include mq($from: large) {
+      display: inline-block;
+      margin-left: 1.5em;
+    }
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  &__icon {
+    margin-right: 0.5em;
+  }
+
+}

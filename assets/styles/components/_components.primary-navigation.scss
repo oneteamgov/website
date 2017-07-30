@@ -1,0 +1,91 @@
+.c-primary-navigation {
+
+  @include clearfix;
+
+  &__link {
+    text-decoration: none;
+  }
+
+  @include mq($until: medium) {
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-align: left;
+    }
+
+    &__item {
+      width: 50%;
+      float: left;
+      font-size: 1.2rem;
+      text-align: center;
+      .wf-active & {
+        font-family: 'Roboto', sans-serif;
+      }
+      &--tickets {
+        width: 100%;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      padding: 0.75rem 0.5rem;
+      text-transform: uppercase;
+      background: #000;
+      background: rgba(#000,0.7);
+      border-radius: 3px;
+      margin: 1px;
+    }
+  }
+
+  @include mq($from: medium) {
+
+    &__list {
+      text-align: right;
+    }
+
+    &__item {
+      display: inline-block;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-right: 1em;
+      margin-bottom: 0.35em;
+    }
+
+    &__link {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+  @include mq($from: large) {
+
+    &__list {
+
+    }
+
+    &__item {
+      font-size: 1.6rem;
+    }
+
+  }
+
+  @include mq($from: xlarge) {
+
+    &__list {
+
+    }
+
+    &__item {
+      font-size: 1.7rem;
+      margin-bottom: 0.4em;
+    }
+
+  }
+
+}

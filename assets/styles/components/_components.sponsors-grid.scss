@@ -1,0 +1,16 @@
+.c-sponsors-grid__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  &__item {
+    margin: 0;
+    padding: 0;
+    display: block;
+    margin-bottom: 2rem!important;
+    @include mq($from: small) {
+      img {
+        max-width: 70%;
+      }
+    }
+  }
+}
