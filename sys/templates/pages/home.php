@@ -41,6 +41,10 @@
             </header>
             <div class="c-page-section__body">
 
+            <?php
+    		        perch_blog_recent_posts(3);
+    		    ?>
+
             </div>
             <footer class="c-page-section__footer">
 
@@ -52,6 +56,10 @@
           <div class="o-layout__item u-1/1 u-1/3@large">
 
             <div class="c-global-sidebar">
+
+              <div class="c-global-sidebar__inner">
+                <h3 class="c-global-side__heading">Heading</h3>
+              </div>
 
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quo sunt odio molestiae, neque cumque praesentium? Autem perferendis, iusto sunt libero veritatis consectetur nesciunt est beatae! Consectetur, itaque illo odio.</p>
 

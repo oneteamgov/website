@@ -398,5 +398,8 @@
     "Link text": "Link text",
     "Link description": "Link description",
     "Link URL": "Link URL",
-    "Item orders successfully updated.": "Item orders successfully updated."
+    "Item orders successfully updated.": "Item orders successfully updated.",
+    "Republish Pages": "Republish Pages",
+    "Republishing pages": "Republishing pages",
+    "Are you sure you wish to republish all pages?": "Are you sure you wish to republish all pages?"
 }

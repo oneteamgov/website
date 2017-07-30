@@ -3,3 +3,5 @@
 /node_modules/
 /build/
 /public
+/sys/core/lang/en-gb.txt
+*.cache
