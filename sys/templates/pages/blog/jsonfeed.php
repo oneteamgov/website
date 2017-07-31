@@ -1,7 +1,7 @@
-<?php 
-    include('../perch/runtime.php'); 
+<?php
+    include('./sys/runtime.php');
     $site_url = 'http://'.$_SERVER['HTTP_HOST'];
-    
+
 
     $feed = [
         'version'       => 'https://jsonfeed.org/version/1',
@@ -25,7 +25,7 @@
                 'date_published' => date('c', strtotime($item['postDateTime'])),
                 'title'          => $item['postTitle'],
                 'content_html'   => $item['postDescHTML'],
-                'url'            => $site_url.'/blog/post.php?s='.$item['postSlug'],
+                'url'            => $site_url.'/blog/'.$item['postSlug'],
             ];
         }
     }

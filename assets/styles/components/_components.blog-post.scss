@@ -1,0 +1,29 @@
+.c-blog-post {
+
+  &__date {
+    display: block;
+    color: #666;
+  }
+
+  &__header {
+    margin-bottom: 0.5em;
+  }
+
+  &__title, &__date {
+    margin: 0;
+  }
+
+  &__body {
+    margin-bottom: 0.5em;
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    font-size: 0.85em;
+  }
+
+  border-bottom: 1px dotted #ccc;
+
+}

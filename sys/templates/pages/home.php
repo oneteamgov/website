@@ -41,9 +41,12 @@
             </header>
             <div class="c-page-section__body">
 
-            <?php
-    		        perch_blog_recent_posts(3);
-    		    ?>
+              <?php
+                perch_blog_custom(array(
+                  'template' => 'blog/homepage_post_in_list.html',
+                  'count' => 5
+                ));
+              ?>
 
             </div>
             <footer class="c-page-section__footer">

@@ -1,4 +1,4 @@
-<?php include('../perch/runtime.php'); ?>
+<?php perch_blog_check_preview(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
 	<?php perch_get_css(); ?>
 	<link rel="stylesheet" href="blog.css" type="text/css" />
 	<?php perch_blog_post_webmention_endpoint(perch_get('s')); ?>
-	
+
 </head>
 <body>
 	<header class="layout-header">
@@ -29,7 +29,6 @@
 	<div class="wrapper cols2-nav-right">
 
 		<div class="primary-content">
-
 
 		    <div class="post">
 		    	<?php perch_blog_post(perch_get('s')); ?>

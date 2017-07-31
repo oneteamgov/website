@@ -6,6 +6,10 @@
   // border-bottom: 2px solid #dfdfdf;
   // margin-bottom: 2rem;
 
+  .o-layout, .o-layout__item {
+    font-size: 1em;
+  }
+
   &:last-of-type {
     border-bottom: 0;
   }

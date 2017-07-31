@@ -1,0 +1,17 @@
+<article class="c-blog-post hentry">
+    <header class="c-blog-post__header">
+      <div class="o-layout o-layout--small o-layout--middle"><div class="o-layout__item u-1/1 u-2/3@medium">
+          <h3 class="c-blog-post__title entry-title">
+            <a href="<perch:blog id="postURL" />" rel="bookmark" class="c-blog-post__link entry-title"><perch:blog id="postTitle" /></a>
+          </h3>
+        </div><div class="o-layout__item u-1/1 u-1/3@medium">
+          <time datetime="<perch:blog id="postDateTime" format="%Y-%m-%d" />" pubdate class="c-blog-post__date u-tar@medium published"><perch:blog id="postDateTime" format="%d %B %Y" /></time>
+        </div></div>
+    </header>
+    <div class="c-blog-post__body entry-summary">
+      <perch:blog id="excerpt" type="textarea" markdown="true" />
+    </div>
+    <div class="c-blog-post__footer">
+      <p>By <perch:blog id="authorGivenName" /> <perch:blog id="authorFamilyName" /></p>
+    </div>
+</article>
