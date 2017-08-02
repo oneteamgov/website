@@ -58,36 +58,14 @@
 
           <div class="o-layout__item u-1/1 u-1/3@large">
 
-            <div class="c-global-sidebar">
-
-              <div class="c-global-sidebar__inner">
-
-                <article class="c-global-sidebar__section">
-                  <h3 class="c-global-sidebar__heading"><svg class="o-icon"><use xlink:href="#icon-open-book"></use></svg> Reading list</h3>
-                  <div class="c-global-sidebar__section-body">
-                    <?php
-                      perch_collection('Reading list', [
-                          'count' => 5,
-                          'sort'  => '_date',
-                          'sort-order' => 'DESC',
-                      ]);
-                    ?>
-                  </div>
-                  <div class="c-global-sidebar__section-footer">
-                    <p><a href="/readinglist/" class="c-link c-link--cta">View the full reading list<svg class="icon icon-small-arrow--r"><use xlink:href="#icon-small-arrow--r"></use></svg></a></p>
-                  </div>
-                </article>
-
-                <article class="c-global-sidebar__section">
-                  <h3 class="c-global-sidebar__heading"><svg class="o-icon"><use xlink:href="#icon-chat"></use></svg> Get involved</h3>
-                  <div class="c-global-sidebar__section-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  </div>
-                </article>
-
-              </div>
-
-            </div>
+            <?php perch_layout('global/sidebar', [
+          		'config' => [
+                'reading_links' => [
+                  'show' => true,
+                  'total' => 2
+                ]
+              ]
+            ]); ?>
 
           </div>
 

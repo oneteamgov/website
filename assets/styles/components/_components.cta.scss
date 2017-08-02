@@ -1,0 +1,50 @@
+.c-cta {
+  display: block;
+  @include clearfix;
+  &__media,
+  &__desc {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__media {
+    width: 15%;
+    img {
+      width: 75%;
+      display: block;
+    }
+  }
+  &__desc {
+    width: 85%;
+    font-weight: bold;
+  }
+  &--social {
+    padding: 1rem;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    &:hover {
+      border-color: #F55A5E;
+    }
+  }
+  &--social & {
+    &__desc {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.c-cta-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  &__item {
+    margin: 0 0 1rem 0;
+    // padding: 0 0 1rem 0;
+    // border-bottom: 1px dotted #dfdfdf;
+    // &:last-of-type {
+    //   border-bottom: 0;
+    //   padding-bottom: 0;
+    // }
+  }
+}
