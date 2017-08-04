@@ -1,3 +1,8 @@
+
+<?php
+  $footer_config = perch_layout_var('config', true);
+?>
+
 <footer class="c-global-footer">
 
   <div class="c-global-footer__bar">
@@ -6,7 +11,7 @@
         <div class="c-global-footer__content">
           <div class="o-layout o-layout--bottom">
             <div class="o-layout__item u-1/2">
-              <p>Supported by</p>
+              <p><?php echo $footer_config['support']['label']; ?></p>
               <div class="o-layout o-layout--bottom c-supporters">
                 <div class="o-layout__item u-1/2 u-1/6@medium">
                   <img src="/public/images/perch.png" alt="Perch runway">
@@ -20,7 +25,7 @@
         </div>
         <div class="o-layout o-layout--bottom">
           <div class="o-layout__item u-1/3 u-1/4@large">
-            <p><perch:content id="copyright" type="text" label="Copyright text" /></p>
+            <p><?php echo $footer_config['copyright']; ?></p>
           </div>
           <div class="o-layout__item u-2/3 u-3/4@large">
             <ul class="c-global-footer__list">

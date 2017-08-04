@@ -1,10 +1,4 @@
-
 <?php
-  // if (perch_layout_var('title', true)) {
-  // 	print perch_layout_var('title');
-  // } else {
-  // 	perch_pages_title();
-  // }
   $sidebar_config = perch_layout_var('config',true);
   $reading_config = $sidebar_config['reading_links'];
   $social_config = $sidebar_config['social'];
@@ -37,7 +31,7 @@
     <?php endif; ?>
 
     <?php
-      // READING LIST ###########################################################
+      // SOCIAL LINKS LIST ######################################################
       if($social_config['show']) :
       // ########################################################################
     ?>

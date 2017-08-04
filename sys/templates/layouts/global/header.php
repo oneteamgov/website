@@ -7,7 +7,7 @@
       <div class="o-layout__item u-1/1 u-1/5@medium">
         <p class="c-global-header__title">
 
-          <span class="c-global-header__logo">
+          <a href="/" class="c-global-header__logo">
             <svg viewBox="0 0 175 175" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="c-global-header__logo-svg">
                 <title>One Team Gov</title>
                 <defs>
@@ -22,7 +22,7 @@
                     </g>
                 </g>
             </svg>
-          </span>
+          </a>
 
         </p>
       </div>
@@ -32,16 +32,16 @@
         <nav class="c-primary-navigation" aria-label="Main menu">
           <ul class="c-primary-navigation__list" role="menubar">
             <li class="c-primary-navigation__item">
-              <a href="#about" class="c-primary-navigation__link js-scrollTrigger">About</a>
+              <a href="/about/" class="c-primary-navigation__link js-scrollTrigger">About</a>
             </li>
             <li class="c-primary-navigation__item">
-              <a href="#about" class="c-primary-navigation__link js-scrollTrigger">Blog</a>
+              <a href="/blog/" class="c-primary-navigation__link js-scrollTrigger">Blog</a>
             </li>
             <li class="c-primary-navigation__item">
-              <a href="#organisers" class="c-primary-navigation__link js-scrollTrigger">Principles</a>
+              <a href="/principles/" class="c-primary-navigation__link js-scrollTrigger">Principles</a>
             </li>
             <li class="c-primary-navigation__item">
-              <a href="#contact" class="c-primary-navigation__link js-scrollTrigger">Contact</a>
+              <a href="/contact/" class="c-primary-navigation__link js-scrollTrigger">Contact</a>
             </li>
 
           </ul>

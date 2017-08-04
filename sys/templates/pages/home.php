@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-	<title><?php perch_pages_title(); ?></title>
-	<?php perch_page_attributes(); ?>
-  <?php perch_layout('global/head'); ?>
+  <?php perch_layout('global/head', [
+    title => perch_pages_title(true) . ' &ndash; One Team Government'
+  ]); ?>
 </head>
 <body>
 
@@ -78,13 +78,14 @@
 
   </main>
 
-  <!-- <?php
-  perch_pages_navigation([
-  'levels' => 1,
-  ]);
-  ?> -->
-
-<?php perch_layout('global/footer'); ?>
+<?php perch_layout('global/footer', [
+  'config' => [
+    'copyright' => perch_content('copyright', true) . ' ' . date("Y"),
+    'support' => [
+      'label' => perch_content('support_label', true)
+    ]
+  ]
+]); ?>
 
 </body>
 </html>

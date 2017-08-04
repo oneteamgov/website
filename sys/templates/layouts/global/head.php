@@ -1,18 +1,7 @@
+<title><?php perch_layout_var('title') ?></title>
 
 <link rel="preload" href="/public/scripts/site.js" as="script">
 <link rel="stylesheet" href="/public/styles/site.min.css">
-
-<!-- twitter card -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@oneteamgov" />
-<meta name="twitter:site:id" content="857620964124884993" />
-<meta name="twitter:title" property="og:title" content="Details of the One Team Government unconference 2017" />
-<meta name="twitter:creator" content="@paulmsmith" />
-<meta name="twitter:creator:id" content="811976" />
-<meta name="twitter:url" property="og:url" content="https://oneteamgov.uk" />
-<meta name="twitter:description" property="og:description" content="Unconference, 29 June 2017 for UK policymakers, service designers, digital professionals & others about how we can make government more effective" />
-<meta name="twitter:image" property="og:image" content="https://oneteamgov.uk/public/images/tc.jpg" />
-<meta name="twitter:image:alt" content="Logo of One Team Government" />
 
 <!-- favicon meta -->
 <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/images/favicon/apple-touch-icon-57x57.png" />
@@ -35,3 +24,21 @@
 <meta name="msapplication-square150x150logo" content="/public/images/favicon/mstile-150x150.png" />
 <meta name="msapplication-wide310x150logo" content="/public/images/favicon/mstile-310x150.png" />
 <meta name="msapplication-square310x310logo" content="/public/images/favicon/mstile-310x310.png" />
+
+<?php
+
+  $domain        = 'http://'.$_SERVER["HTTP_HOST"];
+  $url           = $domain.$_SERVER["REQUEST_URI"];
+  $sitename      = perch_layout_var('sitename', true);
+  $twittername   = "@oneteamgov";
+  $sharing_image = '/public/images/tc.jpg';
+
+  PerchSystem::set_var('domain',$domain);
+  PerchSystem::set_var('url',$url);
+  PerchSystem::set_var('sharing_image',$sharing_image);
+  PerchSystem::set_var('twittername',$twittername);
+
+  perch_page_attributes(array(
+    'template' => 'default.html'
+  ));
+?>
