@@ -1,32 +1,26 @@
 <footer class="c-global-footer">
 
-  <!-- <div class="c-global-footer__content">
-    <div class="o-contain">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-  </div> -->
-
   <div class="c-global-footer__bar">
     <div class="c-global-footer__inner">
       <div class="o-contain">
         <div class="c-global-footer__content">
           <div class="o-layout o-layout--bottom">
             <div class="o-layout__item u-1/2">
-              <p>Supported by:</p>
-              <div class="o-layout o-layout--middle c-supporters">
-                <div class="o-layout__item u-1/1 u-1/4@medium">
-                  <img src="/public/images/perch.png" width="100" alt="">
+              <p>Supported by</p>
+              <div class="o-layout o-layout--bottom c-supporters">
+                <div class="o-layout__item u-1/2 u-1/6@medium">
+                  <img src="/public/images/perch.png" alt="Perch runway">
                 </div>
               </div>
             </div>
             <div class="o-layout__item u-1/2">
-              <p class="u-tar"><img src="/public/images/divcharter.png" width="250" alt=""></p>
+              <p class="u-tar"><img src="/public/images/divcharter.png" width="220" alt=""></p>
             </div>
           </div>
         </div>
         <div class="o-layout o-layout--bottom">
           <div class="o-layout__item u-1/3 u-1/4@large">
-            <p>OneTeamGov 2017</p>
+            <p><perch:content id="copyright" type="text" label="Copyright text" /></p>
           </div>
           <div class="o-layout__item u-2/3 u-3/4@large">
             <ul class="c-global-footer__list">

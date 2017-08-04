@@ -7,6 +7,7 @@
   // }
   $sidebar_config = perch_layout_var('config',true);
   $reading_config = $sidebar_config['reading_links'];
+  $social_config = $sidebar_config['social'];
 ?>
 
 <div class="c-global-sidebar">
@@ -35,6 +36,11 @@
     </article>
     <?php endif; ?>
 
+    <?php
+      // READING LIST ###########################################################
+      if($social_config['show']) :
+      // ########################################################################
+    ?>
     <article class="c-global-sidebar__section">
       <h3 class="c-global-sidebar__heading"><svg class="o-icon"><use xlink:href="#icon-chat"></use></svg> Get involved</h3>
       <div class="c-global-sidebar__section-body">
@@ -54,6 +60,7 @@
 
       </div>
     </article>
+    <?php endif; ?>
 
   </div>
 

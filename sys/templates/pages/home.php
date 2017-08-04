@@ -44,7 +44,7 @@
               <?php
                 perch_blog_custom(array(
                   'template' => 'blog/homepage_post_in_list.html',
-                  'count' => 5
+                  'count' => 3
                 ));
               ?>
 
@@ -63,6 +63,9 @@
                 'reading_links' => [
                   'show' => true,
                   'total' => 2
+                ],
+                'social' => [
+                  'show' => true
                 ]
               ]
             ]); ?>
