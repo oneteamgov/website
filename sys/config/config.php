@@ -38,3 +38,4 @@
 
     define('PERCH_HTML5', true);
     define('PERCH_TZ', 'UTC');
+    define('PERCH_SITE_BEHIND_LOGIN', getenv('PERCH_SITE_BEHIND_LOGIN'));

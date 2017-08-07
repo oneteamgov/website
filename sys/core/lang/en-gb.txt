@@ -475,5 +475,15 @@
     "Your most recent change has been reverted.": "Your most recent change has been reverted.",
     "Delete Asset": "Delete Asset",
     "Are you sure you wish to delete this asset? %sIt may be in use on your site. Deleting will result in the asset no longer being available.%s": "Are you sure you wish to delete this asset? %sIt may be in use on your site. Deleting will result in the asset no longer being available.%s",
-    "Required": "Required"
+    "Required": "Required",
+    "Delete Master Page": "Delete Master Page",
+    "Add item": "Add item",
+    "Menu options": "Menu options",
+    "Detail": "Detail",
+    "Organise": "Organise",
+    "Your menu item has been successfully edited. Return to %slisting%s": "Your menu item has been successfully edited. Return to %slisting%s",
+    "#OneTeamGov": "#OneTeamGov",
+    "New item": "New item",
+    "Your menu item has been successfully created. Return to %slisting%s": "Your menu item has been successfully created. Return to %slisting%s",
+    "Reading list": "Reading list"
 }

@@ -8,7 +8,9 @@
 </head>
 <body>
 
-  <?php perch_layout('global/header'); ?>
+  <?php perch_layout('global/header',[
+    'hide_nav' => false
+  ]); ?>
 
   <?php
     $showSidebar = perch_page_attribute('layout_sidebar',[],true);

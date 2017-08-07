@@ -27,6 +27,7 @@
         </p>
       </div>
 
+      <?php if(!perch_layout_var('hide_nav', true)) : ?>
       <div class="o-layout__item u-1/1 u-4/5@medium">
 
         <nav class="c-primary-navigation" aria-label="Main menu">
@@ -48,6 +49,7 @@
         </nav>
 
       </div>
+    <?php endif; ?>
 
     </div>
   </div>
