@@ -2,6 +2,7 @@
   $sidebar_config = perch_layout_var('config',true);
   $reading_config = $sidebar_config['reading_links'];
   $social_config = $sidebar_config['social'];
+  $subnav_config = $sidebar_config['subnav'];
 ?>
 
 <div class="c-global-sidebar">
@@ -9,8 +10,19 @@
   <div class="c-global-sidebar__inner">
 
     <?php
+      if($subnav_config['show']) {
+        perch_pages_navigation(array(
+          'from-path'  => '*',
+          'from-level' => 1,
+          'include-parent' => $subnav_config['show_parent'],
+          'flat' => $subnav_config['flat']
+        ));
+      }
+    ?>
+
+    <?php
       // READING LIST ###########################################################
-      if($reading_config['show']) :
+      if($reading_config['show'] == 'true') :
       // ########################################################################
     ?>
     <article class="c-global-sidebar__section">

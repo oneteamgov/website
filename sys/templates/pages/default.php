@@ -12,6 +12,7 @@
 
   <?php
     $showSidebar = perch_page_attribute('layout_sidebar',[],true);
+    $showReadingList = perch_page_attribute('layout_sidebar_reading',[], true);
   ?>
 
   <main id="content">
@@ -33,21 +34,19 @@
         <?php if ($showSidebar == 'true') : ?>
         <div class="o-layout__item u-1/1 u-1/3@large">
 
-          <?php perch_pages_navigation(array(
-              'from-path'  => '*',
-              'from-level' => 1,
-              'include-parent' => true,
-              'flat' => true
-          )); ?>
-
           <?php perch_layout('global/sidebar', [
         		'config' => [
               'reading_links' => [
-                'show' => true,
+                'show' => $showReadingList,
                 'total' => 3
               ],
               'social' => [
                 'show' => true
+              ],
+              'subnav' => [
+                'show' => true,
+                'show_parent' => true,
+                'flat' => true
               ]
             ]
           ]); ?>

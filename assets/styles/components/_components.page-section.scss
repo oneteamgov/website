@@ -40,6 +40,10 @@
     margin-bottom: 2rem;
   }
 
+  &__intro {
+    margin-bottom: 2rem;
+  }
+
   @include mq($from: medium) {
     padding-left: 0;
     padding-right: 0;

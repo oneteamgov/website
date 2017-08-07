@@ -1,0 +1,7 @@
+.c-principle {
+  margin-bottom: 2rem!important;
+  &:last-child,
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

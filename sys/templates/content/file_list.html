@@ -1,0 +1,37 @@
+
+<div class="c-file-listing">
+
+  <div class="c-file-listing__overview">
+      <perch:template path="content/article.html" />
+  </div>
+
+  <div class="c-file-listing__list">
+
+    <div class="c-file-listing__list-title">
+      <h2 class="c-file-listing__list-title-heading"><perch:content id="list_heading" type="text" label="Heading for the list of files" required="true" /></h2>
+    </div>
+
+    <perch:repeater id="files" label="Files">
+    <div class="o-layout c-file-listing__item">
+      <div class="o-layout__item u-1/2 u-1/3@medium">
+        <div class="c-file-listing__item-thumb">
+          <img src="<perch:content id="file_image" type="image" label="File thumbnail/preview" />" alt="">
+        </div>
+      </div>
+      <div class="o-layout__item u-1/2 u-2/3@medium">
+        <div class="c-file-listing__item-title">
+          <h3 class="c-file-listing__item-title-heading"><perch:content id="file_heading" type="text" label="Heading" required="true" /></h3>
+        </div>
+        <div class="c-file-listing__item-desc">
+          <perch:content id="file_desc" type="textarea" label="File description" markdown="true" editor="markitup" size="m" count="words" />
+        </div>
+        <div class="c-file-listing__item-link">
+          <a href="<perch:content id="file_upload" type="file" label="The file for users to download" />" class="c-link c-link--cta">Download <perch:content id="file_upload" type="file" label="The file for users to download" output="filename" /> (<perch:content id="file_upload" type="file" label="The file for users to download" output="size" format="MB" />)</a>
+        </div>
+      </div>
+    </div>
+    </perch:repeater>
+
+  </div>
+
+</div>

@@ -1,0 +1,26 @@
+.c-file-listing {
+  &__list {
+    &-title {
+      &-heading {
+        margin: 0 0 2rem 0;
+        border-bottom: 3px solid #000;
+        padding-bottom: 0.25rem;
+      }
+    }
+  }
+  &__item {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 2rem;
+    &:last-of-type {
+      border-bottom: 0;
+    }
+    &-thumb {
+      img {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}

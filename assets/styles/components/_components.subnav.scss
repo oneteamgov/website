@@ -1,0 +1,28 @@
+.c-subnav {
+  list-style-type: none;
+  margin: 0 0 2rem 0;
+  padding: 0;
+  &__item {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-bottom: 0px;
+    &:first-child {
+      border-radius: 10px 10px 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 10px 10px;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+  &__link {
+    display: block;
+    background: lighten(#ccc,15%);
+    padding: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

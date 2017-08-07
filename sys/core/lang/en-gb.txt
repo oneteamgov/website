@@ -471,5 +471,9 @@
     "Reordering navigation group": "Reordering navigation group",
     "Drag and drop the pages to reorder them.": "Drag and drop the pages to reorder them.",
     "Page orders successfully updated.": "Page orders successfully updated.",
-    "Your navigation group has been successfully updated.": "Your navigation group has been successfully updated."
+    "Your navigation group has been successfully updated.": "Your navigation group has been successfully updated.",
+    "Your most recent change has been reverted.": "Your most recent change has been reverted.",
+    "Delete Asset": "Delete Asset",
+    "Are you sure you wish to delete this asset? %sIt may be in use on your site. Deleting will result in the asset no longer being available.%s": "Are you sure you wish to delete this asset? %sIt may be in use on your site. Deleting will result in the asset no longer being available.%s",
+    "Required": "Required"
 }

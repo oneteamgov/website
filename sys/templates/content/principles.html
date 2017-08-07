@@ -1,0 +1,21 @@
+<article class="c-page-section c-page-section--principles">
+  <div class="c-page-section__body">
+    <div class="c-page-section__intro">
+      <perch:content id="principles_intro" type="textarea" label="Introduction" markdown="true" editor="simplemde" required="true" imagewidth="800" height="300" />
+    </div>
+    <div class="c-page-section__content">
+      <ol>
+        <perch:repeater id="principles" label="Principles">
+          <li class="c-principle" id="<perch:content id="perch_item_index" type="hidden" />">
+            <h3 class="c-principle__title">
+              <perch:content id="principle_heading" type="text" label="Principle heading" required="true" title="true" />
+            </h3>
+            <div class="c-principle__content">
+              <perch:content id="principle_content" type="textarea" label="Principle content" markdown="true" editor="simplemde" required="true" imagewidth="800" height="300" />
+            </div>
+          </li>
+        </perch:repeater>
+      </ol>
+    </div>
+  </div>
+</article>
