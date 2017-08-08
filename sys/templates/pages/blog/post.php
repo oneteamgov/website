@@ -67,7 +67,7 @@
                 'show' => true
               ],
               'subnav' => [
-                'show' => true,
+                'show' => false,
                 'show_parent' => true,
                 'flat' => true
               ],
