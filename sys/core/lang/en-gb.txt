@@ -485,5 +485,21 @@
     "#OneTeamGov": "#OneTeamGov",
     "New item": "New item",
     "Your menu item has been successfully created. Return to %slisting%s": "Your menu item has been successfully created. Return to %slisting%s",
-    "Reading list": "Reading list"
+    "Reading list": "Reading list",
+    "User successfully created.": "User successfully created.",
+    "Committee member": "Committee member",
+    "Manage Roles - Actions": "Manage Roles - Actions",
+    "These actions perform a one-time bulk edit to the site as it currently stands. They have no ongoing effect.": "These actions perform a one-time bulk edit to the site as it currently stands. They have no ongoing effect.",
+    "Editing Regions": "Editing Regions",
+    "Modify all existing regions to grant or revoke permission for this role to edit.": "Modify all existing regions to grant or revoke permission for this role to edit.",
+    "Make no changes": "Make no changes",
+    "Grant role permission to edit all regions": "Grant role permission to edit all regions",
+    "Revoke role permissions to edit all regions": "Revoke role permissions to edit all regions",
+    "Creating Subpages": "Creating Subpages",
+    "Modify all existing pages to grant or revoke permission for this role to be able to create subpages.": "Modify all existing pages to grant or revoke permission for this role to be able to create subpages.",
+    "Grant role permission create new subpages of all current pages": "Grant role permission create new subpages of all current pages",
+    "Revoke role permission to create new subpages": "Revoke role permission to create new subpages",
+    "Make changes": "Make changes",
+    "You chose to make no changes. No changes have made successfully. (It was easy).": "You chose to make no changes. No changes have made successfully. (It was easy).",
+    "User successfully updated.": "User successfully updated."
 }

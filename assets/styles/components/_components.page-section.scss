@@ -3,9 +3,6 @@
   font-family: 'otg-roman',Georgia,Cambria,"Times New Roman",Times,serif;
   padding: 1rem 1.5rem;
 
-  // border-bottom: 2px solid #dfdfdf;
-  // margin-bottom: 2rem;
-
   .o-layout, .o-layout__item {
     font-size: 1em;
   }
@@ -31,16 +28,42 @@
 
   &__heading {
     border-bottom: 3px solid black;
+    padding-bottom: 0.15em;
+    line-height: 1.3;
+    &-link {
+      text-decoration: none;
+    }
   }
 
   &__body {
+
     & > *:last-child {
       margin-bottom: 0;
     }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     margin-bottom: 2rem;
+
+    h1, h2, h3, h4, h5, p, ul, ol {
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 1.15rem;
+    }
+
+    blockquote {
+      padding: 0 2rem;
+      border-left: 4px solid #333;
+    }
+
   }
 
-  &__intro {
+  &__intro, &__image {
     margin-bottom: 2rem;
   }
 
@@ -95,22 +118,21 @@
 
 }
 
-// .promo-text {
-//   text-align: center;
-//   font-size: 3.5vw;
-//   border-bottom: 3px solid #000;
-//   margin-bottom: 1rem;
-//   line-height: 1;
-//   padding-bottom: 1rem;
-//
-//   @include mq($until: medium) {
-//     padding-bottom: 0;
-//   }
-//
-//   @include mq($from: large) {
-//     border-bottom-width: 6px;
-//     margin-bottom: 2rem;
-//     padding-bottom: 1rem;
-//     font-size: 2.5vw;
-//   }
-// }
+.c-page-section--blog-post {
+
+  .c-page-section {
+
+    &__body {
+
+      a {
+        @include ellipsis;
+        display: inline-block;
+        max-width: 100%;
+        vertical-align: top;
+      }
+
+    }
+
+  }
+
+}

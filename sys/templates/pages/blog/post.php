@@ -1,11 +1,44 @@
 <?php perch_blog_check_preview(); ?>
 
+<?php
+# get the post
+$post = perch_blog_custom(array(
+    'filter'        => 'postSlug',
+    'match'         => 'eq',
+    'value'         => perch_get('s'),
+    'skip-template' => 'true',
+    'return-html'   => 'true',
+  ));
+
+# set up the variables
+$postData      = $post['0'];
+$title         = $postData['postTitle'];
+$description   = strip_tags($postData['excerpt']);
+
+// if we have an image
+if (isset($postData['fbimage'])) {
+    $fbimage = $postData['fbimage'];
+} else {
+    $fbimage = '';
+}
+
+# use the variables in the array value
+perch_page_attributes_extend(array(
+    'description'    => $description,
+    'og_description' => $description,
+    'og_title'       => $title,
+    'og_type'        => 'article',
+    'og_image'  => $fbimage,
+    'og_author'      => 'https://www.facebook.com/paulmichaelsmith',
+));
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <?php perch_layout('global/head', [
-    title => perch_pages_title(true) . ' &ndash; One Team Government'
+    'title' => $title . ' &ndash; ' . perch_pages_title(true) . ' &ndash; One Team Government'
   ]); ?>
 	<?php perch_blog_post_webmention_endpoint(perch_get('s')); ?>
 </head>
@@ -34,28 +67,12 @@
 
         <div class="o-layout__item u-1/1 u-2/3@large">
 
-					<?php perch_blog_post(perch_get('s')); ?>
-
-		    	<?php perch_blog_author_for_post(perch_get('s')); ?>
-
-					<?php perch_blog_post_tags(perch_get('s')); ?>
+          <?php echo $post['html']; ?>
 
         </div>
 
         <?php if ($showSidebar == 'true') : ?>
         <div class="o-layout__item u-1/1 u-1/3@large">
-
-					<!-- The following functions are different ways to display archives. You can use any or all of these.
-
-					All of these functions can take a parameter of a template to overwrite the default template, for example:
-
-					perch_blog_categories('my_template.html');
-
-					-->
-					<!--  By tag -->
-					<?php perch_blog_tags(); ?>
-					<!--  By year -->
-					<?php perch_blog_date_archive_months(); ?>
 
           <?php perch_layout('global/sidebar', [
         		'config' => [
@@ -73,8 +90,18 @@
               ],
 							'blog' => [
 								'show' => true,
-								'show_cat' => true,
-								'show_date_archive' => true,
+                'author_details' => [
+                  'show' => true
+                ],
+                'post_details' => [
+                  'show' => true
+                ],
+                'nav' => [
+                  'show' => false,
+                  'show_date_archive' => true,
+                  'show_cat' => true
+                ],
+
 							]
             ]
           ]); ?>

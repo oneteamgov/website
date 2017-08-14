@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <?php perch_layout('global/head', [
-    title => perch_pages_title(true) . ' &ndash; One Team Government'
+    'title' => perch_pages_title(true) . ' &ndash; One Team Government'
   ]); ?>
 </head>
 <body>
@@ -49,7 +49,8 @@
                 'show' => true,
                 'show_parent' => true,
                 'flat' => true
-              ]
+              ],
+              'blog' => false
             ]
           ]); ?>
 

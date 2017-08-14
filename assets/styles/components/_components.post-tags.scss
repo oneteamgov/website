@@ -1,0 +1,24 @@
+.c-post-tags {
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__title {
+    margin-right: .5em;
+  }
+  &__title,
+  &__list,
+  &__item {
+    display: inline-block;
+  }
+  &__link {
+    display: inline-block;
+    padding: 0.15em 0.75em;
+    border-radius: 6px;
+    text-decoration: none;
+    &-text {
+      text-decoration: underline;
+    }
+  }
+}

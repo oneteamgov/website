@@ -1,0 +1,20 @@
+.c-dl {
+  @include clearfix;
+  &__key,
+  &__val {
+    margin: 0;
+    padding: 0;
+    float: left;
+  }
+  &__key {
+    font-weight: bold;
+    clear: both;
+    margin-right: 0.5em;
+    min-width: 30%;
+  }
+  &--post-details {
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px dotted #ccc;
+  }
+}

@@ -1,5 +1,7 @@
 .c-global-sidebar {
 
+  margin-bottom: 2rem;
+
   @include mq($from: large) {
     margin: 3vw 0;
     border-radius: 10px;

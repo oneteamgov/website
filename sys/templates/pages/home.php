@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <?php perch_layout('global/head', [
-    title => perch_pages_title(true) . ' &ndash; One Team Government'
+    'title' => perch_pages_title(true) . ' &ndash; One Team Government'
   ]); ?>
 </head>
 <body>
@@ -44,7 +44,9 @@
               <?php
                 perch_blog_custom(array(
                   'template' => 'blog/homepage_post_in_list.html',
-                  'count' => 3
+                  'count' => 3,
+                  'sort' => 'postDateTime',
+                  'sort-order' => 'DESC'
                 ));
               ?>
 
@@ -62,11 +64,14 @@
           		'config' => [
                 'reading_links' => [
                   'show' => true,
-                  'total' => 2
+                  'total' => 2,
+                  'sort-order' => 'DESC'
                 ],
                 'social' => [
                   'show' => true
-                ]
+                ],
+                'blog' => false,
+                'subnav' => false
               ]
             ]); ?>
 

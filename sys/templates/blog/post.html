@@ -1,0 +1,18 @@
+<article class="c-page-section c-page-section--blog-post h-entry">
+  <header class="c-page-section__header">
+    <h1 class="c-page-section__heading">
+			<a href="<perch:blog id="postURL" type="hidden" />" rel="bookmark" class="c-page-section__heading-link p-name">
+					<perch:blog id="postTitle" type="text" label="Title" required="true" size="xl autowidth" order="2" />
+			</a>
+    </h1>
+  </header>
+	<perch:if exists="image">
+		<div class="c-page-section__image">
+				<img src="<perch:blog id="image" type="image" width="1200" label="Image" order="1" />" alt="" />
+		</div>
+	</perch:if>
+  <div class="c-page-section__body">
+		<perch:blog id="postDescHTML" type="textarea" label="Post" order="4" editor="markitup" markdown="true" size="xxl autowidth" required="true" />
+    <perch:blog id="excerpt" type="textarea" label="Excerpt" markdown="true" order="3" suppress="true" size="s" required="true" />
+  </div>
+</article>

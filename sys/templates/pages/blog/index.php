@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <?php
+    $page_attributes = perch_page_attributes([
+      'template' => 'layout.html',
+      'skip-template' => 'true'
+    ],true);
+  ?>
   <?php perch_layout('global/head', [
-    title => perch_pages_title(true) . ' &ndash; One Team Government'
+    'title' => perch_pages_title(true) . ' &ndash; One Team Government'
   ]); ?>
 </head>
 <body>
@@ -11,11 +17,6 @@
   <?php perch_layout('global/header',[
     'hide_nav' => false
   ]); ?>
-
-  <?php
-    $showSidebar = perch_page_attribute('layout_sidebar',[],true);
-    $showReadingList = perch_page_attribute('layout_sidebar_reading',[], true);
-  ?>
 
   <main id="content">
 
@@ -31,41 +32,40 @@
 
         <div class="o-layout__item u-1/1 u-2/3@large">
 
-					<?php
-			        perch_blog_recent_posts(10);
-			    ?>
-
-			    <p><a href="archive.php">More posts</a></p>
+          <?php
+            perch_blog_custom(array(
+              'count'      => 10,
+              'template'   => 'post_in_list.html',
+              'sort'       => 'postDateTime',
+              'sort-order' => 'DESC'
+            ));
+          ?>
 
         </div>
 
-        <?php if ($showSidebar == 'true') : ?>
+        <?php if ($page_attributes['layout_sidebar'] == 'true') : ?>
         <div class="o-layout__item u-1/1 u-1/3@large">
-
-					<!-- The following functions are different ways to display archives. You can use any or all of these.
-
-			    All of these functions can take a parameter of a template to overwrite the default template, for example:
-
-			    perch_blog_categories('my_template.html');
-
-			    -->
-			    <!--  By category listing -->
-			    <?php perch_blog_categories(); ?>
-			    <!--  By tag -->
-			    <?php perch_blog_tags(); ?>
-			    <!--  By year -->
-			    <?php perch_blog_date_archive_years(); ?>
-			    <!--  By year and then month - can take parameters for two templates. The first displays the years and the second the months see the default templates for examples -->
-			    <?php perch_blog_date_archive_months(); ?>
 
           <?php perch_layout('global/sidebar', [
         		'config' => [
               'reading_links' => [
-                'show' => $showReadingList,
-                'total' => 3
+                'show' => $page_attributes['layout_sidebar_reading'],
+                'total' => $page_attributes['layout_sidebar_reading_count']
               ],
               'social' => [
                 'show' => true
+              ],
+              'blog' => [
+                'show' => true,
+                'archives' => [
+                  'show' => true
+                ],
+                'post_details' => [
+                  'show' => false
+                ],
+                'nav' => [
+                  'show' => false
+                ]
               ],
               'subnav' => [
                 'show' => false,
