@@ -501,5 +501,12 @@
     "Revoke role permission to create new subpages": "Revoke role permission to create new subpages",
     "Make changes": "Make changes",
     "You chose to make no changes. No changes have made successfully. (It was easy).": "You chose to make no changes. No changes have made successfully. (It was easy).",
-    "User successfully updated.": "User successfully updated."
+    "User successfully updated.": "User successfully updated.",
+    "Sorry, there's currently no content available based on that filter": "Sorry, there's currently no content available based on that filter",
+    "View all": "View all",
+    "Region Revisions": "Region Revisions",
+    "Revision": "Revision",
+    "Created by": "Created by",
+    "Published revision": "Published revision",
+    "Roll back": "Roll back"
 }

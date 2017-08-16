@@ -9,7 +9,7 @@
 <body>
 
   <?php perch_layout('global/header', [
-    'hide_nav' => true
+    'hide_nav' => false
   ]); ?>
 
   <?php

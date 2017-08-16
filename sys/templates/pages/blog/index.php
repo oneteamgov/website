@@ -37,7 +37,8 @@
               'count'      => 10,
               'template'   => 'post_in_list.html',
               'sort'       => 'postDateTime',
-              'sort-order' => 'DESC'
+              'sort-order' => 'DESC',
+              'cache' => false
             ));
           ?>
 

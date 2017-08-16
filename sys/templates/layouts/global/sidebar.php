@@ -4,6 +4,7 @@
   $social_config = $sidebar_config['social'];
   $subnav_config = $sidebar_config['subnav'];
   $blog_config = $sidebar_config['blog'];
+  $author_details = $sidebar_config['blog']['author_details']['data'];
 ?>
 
 <div class="c-global-sidebar">
@@ -42,17 +43,6 @@
         <article class="c-global-sidebar__section">
           <h3 class="c-global-sidebar__heading"><svg class="o-icon"><use xlink:href="#icon-info"></use></svg> Post details</h3>
           <div class="c-global-sidebar__section-body">
-
-            <?php
-              $author_details = perch_blog_author_for_post(perch_get('s'), array(
-                  'template' => 'author_sidebar.html',
-                  'skip-template' => true
-              ));
-            ?>
-
-            <script>
-              console.log(<?= json_encode($author_details); ?>);
-            </script>
 
             <dl class="c-dl c-dl--post-details">
               <dt class="c-dl__key">Published:</dt>

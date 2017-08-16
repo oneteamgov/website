@@ -1,36 +1,42 @@
 <?php perch_blog_check_preview(); ?>
 
 <?php
-# get the post
-$post = perch_blog_custom(array(
-    'filter'        => 'postSlug',
-    'match'         => 'eq',
-    'value'         => perch_get('s'),
-    'skip-template' => 'true',
-    'return-html'   => 'true',
+
+  $page_attributes = perch_page_attributes([
+    'template' => 'layout.html',
+    'skip-template' => 'true'
+  ],true);
+
+  $author_details = perch_blog_author_for_post(perch_get('s'), array(
+      'template' => 'author_sidebar.html',
+      'skip-template' => true
   ));
 
-# set up the variables
-$postData      = $post['0'];
-$title         = $postData['postTitle'];
-$description   = strip_tags($postData['excerpt']);
+  # get the post
+  $post = perch_blog_custom(array(
+      'filter'        => 'postSlug',
+      'match'         => 'eq',
+      'value'         => perch_get('s'),
+      'skip-template' => 'true',
+      'return-html'   => 'true',
+      'cache' => 'false'
+    ));
 
-// if we have an image
-if (isset($postData['fbimage'])) {
-    $fbimage = $postData['fbimage'];
-} else {
-    $fbimage = '';
-}
+  # set up the variables
+  $postData      = $post['0'];
+  $title         = $postData['postTitle'];
+  $description   = strip_tags($postData['excerpt']);
 
-# use the variables in the array value
-perch_page_attributes_extend(array(
+  # use the variables in the array value
+  perch_page_attributes_extend(array(
     'description'    => $description,
     'og_description' => $description,
     'og_title'       => $title,
     'og_type'        => 'article',
-    'og_image'  => $fbimage,
-    'og_author'      => 'https://www.facebook.com/paulmichaelsmith',
-));
+    'og_image'       => $postData['image'],
+    'og_author'      => $author_details['authorGivenName'] . ' ' . $author_details['authorFamilyName'],
+  ));
+
 ?>
 
 <!doctype html>
@@ -40,18 +46,12 @@ perch_page_attributes_extend(array(
   <?php perch_layout('global/head', [
     'title' => $title . ' &ndash; ' . perch_pages_title(true) . ' &ndash; One Team Government'
   ]); ?>
-	<?php perch_blog_post_webmention_endpoint(perch_get('s')); ?>
 </head>
 <body>
 
   <?php perch_layout('global/header',[
     'hide_nav' => false
   ]); ?>
-
-  <?php
-    $showSidebar = perch_page_attribute('layout_sidebar',[],true);
-    $showReadingList = perch_page_attribute('layout_sidebar_reading',[], true);
-  ?>
 
   <main id="content">
 
@@ -71,14 +71,14 @@ perch_page_attributes_extend(array(
 
         </div>
 
-        <?php if ($showSidebar == 'true') : ?>
+        <?php if ($page_attributes['layout_sidebar'] == 'true') : ?>
         <div class="o-layout__item u-1/1 u-1/3@large">
 
           <?php perch_layout('global/sidebar', [
         		'config' => [
               'reading_links' => [
-                'show' => $showReadingList,
-                'total' => 3
+                'show' => $page_attributes['layout_sidebar_reading'],
+                'total' => $page_attributes['layout_sidebar_reading_count']
               ],
               'social' => [
                 'show' => true
@@ -91,7 +91,8 @@ perch_page_attributes_extend(array(
 							'blog' => [
 								'show' => true,
                 'author_details' => [
-                  'show' => true
+                  'show' => true,
+                  'data' => $author_details
                 ],
                 'post_details' => [
                   'show' => true
@@ -101,7 +102,6 @@ perch_page_attributes_extend(array(
                   'show_date_archive' => true,
                   'show_cat' => true
                 ],
-
 							]
             ]
           ]); ?>

@@ -36,7 +36,7 @@
                 <a href="http://twitter.com/oneteamgov" class="c-global-footer__link"><svg class="o-icon c-global-footer__icon"><use xlink:href="#icon-twitter"></use></svg>Follow us on Twitter</a>
               </li>
               <li class="c-global-footer__item">
-                <a href="/code-of-conduct.html" class="c-global-footer__link"><svg class="o-icon c-global-footer__icon"><use xlink:href="#icon-open-book"></use></svg>Code of conduct</a>
+                <a href="/about/code-of-conduct" class="c-global-footer__link"><svg class="o-icon c-global-footer__icon"><use xlink:href="#icon-open-book"></use></svg>Code of conduct</a>
               </li>
             </ul>
           </div>
