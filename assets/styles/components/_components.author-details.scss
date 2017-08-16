@@ -1,0 +1,12 @@
+.c-author-details {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2rem;
+  &__thumb {
+    img {
+      -webkit-clip-path: polygon(99% 14%,87% 98%,3% 86%,15% 3%);
+      clip-path: polygon(99% 14%,87% 98%,3% 86%,15% 3%);
+      width: 100%;
+    }
+  }
+}

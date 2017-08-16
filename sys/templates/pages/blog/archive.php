@@ -179,6 +179,49 @@
 				    <h1 class="c-page-section__heading"><?php echo $archiveTitle; ?></h1>
 				  </header>
 
+          <?php if (perch_get('author')) : ?>
+
+            <?php
+                $author_details = perch_blog_author(perch_get('author'), array(
+                  'template' => 'author.html',
+                  'skip-template' => true
+                ));
+            ?>
+
+
+            <script>
+  console.log(<?= json_encode($author_details); ?>);
+</script>
+            <div class="c-author-details">
+              <div class="o-layout">
+
+                <?php if (isset($author_details['author_image'])): ?>
+                  <div class="o-layout__item u-1/4 u-1/5@large">
+                    <div class="c-author-details__thumb">
+                      <img src="<?php echo $author_details['author_image']['_default'] ?>" alt="">
+                    </div>
+                  </div><div class="o-layout__item u-3/4 u-4/5@large">
+                    <div class="c-author-details__desc hcard">
+                      <?php echo $author_details['author_biog']['processed'] ?>
+                    </div>
+                  </div>
+                <?php else : ?>
+                <div class="o-layout__item u-1/1">
+                  <div class="c-author-details__desc hcard">
+                    <?php echo $author_details['author_biog']['processed'] ?>
+                  </div>
+                </div>
+                <?php endif ?>
+
+              </div>
+            </div>
+
+            <script>
+              console.log(<?= json_encode($author_details); ?>);
+            </script>
+
+          <?php endif ?>
+
 					<?php echo $archiveListing['html'] ?>
 
 				</article>

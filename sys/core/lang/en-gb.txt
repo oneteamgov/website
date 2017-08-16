@@ -508,5 +508,7 @@
     "Revision": "Revision",
     "Created by": "Created by",
     "Published revision": "Published revision",
-    "Roll back": "Roll back"
+    "Roll back": "Roll back",
+    "Adding a new backup plan": "Adding a new backup plan",
+    "New Plan": "New Plan"
 }
