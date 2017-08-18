@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <?php
+    $page_attributes = perch_page_attributes([
+      'template' => 'layout.html',
+      'skip-template' => 'true'
+    ],true);
+  ?>
   <?php perch_layout('global/head', [
     'title' => perch_pages_title(true) . ' &ndash; One Team Government'
   ]); ?>
@@ -63,8 +69,8 @@
             <?php perch_layout('global/sidebar', [
           		'config' => [
                 'reading_links' => [
-                  'show' => true,
-                  'total' => 2,
+                  'show' => $page_attributes['layout_sidebar_reading'],
+                  'total' => $page_attributes['layout_sidebar_reading_count'],
                   'sort-order' => 'DESC'
                 ],
                 'social' => [

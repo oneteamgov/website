@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <?php
+    $page_attributes = perch_page_attributes([
+      'template' => 'layout.html',
+      'skip-template' => 'true'
+    ],true);
+  ?>
   <?php perch_layout('global/head', [
     'title' => perch_pages_title(true) . ' &ndash; One Team Government'
   ]); ?>
@@ -11,11 +17,6 @@
   <?php perch_layout('global/header',[
     'hide_nav' => false
   ]); ?>
-
-  <?php
-    $showSidebar = perch_page_attribute('layout_sidebar',[],true);
-    $showReadingList = perch_page_attribute('layout_sidebar_reading',[], true);
-  ?>
 
   <main id="content">
 
@@ -33,14 +34,14 @@
           <?php perch_content('page_content') ?>
         </div>
 
-        <?php if ($showSidebar == 'true') : ?>
+        <?php if ($page_attributes['layout_sidebar'] == 'true') : ?>
         <div class="o-layout__item u-1/1 u-1/3@large">
 
           <?php perch_layout('global/sidebar', [
         		'config' => [
               'reading_links' => [
-                'show' => $showReadingList,
-                'total' => 3
+                'show' => $page_attributes['layout_sidebar_reading'],
+                'total' => ($page_attributes['layout_sidebar_reading_count'] ? $page_attributes['layout_sidebar_reading_count'] : '3')
               ],
               'social' => [
                 'show' => true
