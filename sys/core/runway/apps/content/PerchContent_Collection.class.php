@@ -306,7 +306,7 @@ class PerchContent_Collection extends PerchBase
 	        $Items->truncate_for_collection($this->id(), $resulting_item_count);
 
 	        $Perch = Perch::fetch();
-	        $Perch->event('region.truncate', $this);
+	        $Perch->event('collection.truncate', $this);
 	    }
 
 	    /**

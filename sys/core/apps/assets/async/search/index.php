@@ -1,16 +1,16 @@
 <?php
-    include(realpath(__DIR__ . '/../../..').'/inc/pre_config.php');
-    include(realpath(__DIR__ . '/../../../..').'/config/config.php');
+    include(realpath(__DIR__ . '/../../../..').'/inc/pre_config.php');
+    include(realpath(__DIR__ . '/../../../../..').'/config/config.php');
     include(PERCH_CORE . '/inc/loader.php');
     $Perch  = PerchAdmin::fetch();
     include(PERCH_CORE . '/inc/auth_light.php');
     
     $Perch->page_title = PerchLang::get('Manage Assets');
 
-    include(__DIR__.'/../PerchAssets_Asset.class.php');
-    include(__DIR__.'/../PerchAssets_Assets.class.php');
-    include(__DIR__.'/../PerchAssets_Tags.class.php');
-    include(__DIR__.'/../PerchAssets_Tag.class.php');
+    include(__DIR__.'/../../PerchAssets_Asset.class.php');
+    include(__DIR__.'/../../PerchAssets_Assets.class.php');
+    include(__DIR__.'/../../PerchAssets_Tags.class.php');
+    include(__DIR__.'/../../PerchAssets_Tag.class.php');
 
     $Paging = new PerchPaging();
     $Paging->set_per_page(24);
@@ -23,7 +23,7 @@
         die();
     }
 
-    $assets = $Assets->search($term);           
+    $assets = $Assets->search($term, false, $CurrentUser);           
 
     $out = array();
 

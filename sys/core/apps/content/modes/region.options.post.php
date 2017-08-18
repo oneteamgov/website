@@ -339,6 +339,23 @@
 
 <?php
         }
+
+
+        if ($CurrentUser->has_priv('content.regions.empty')){
+?>
+        <h2 class="divider notification notification-warning"><?php echo PerchLang::get('Warning'), ' - ', PerchLang::get('This option deletes all content from this region.'); ?></h2>
+        <div class="field-wrap">
+            <?php echo $Form->label('regionReset', 'Delete all content from this region immediately'); ?>
+            <div class="form-entry">
+            <?php         
+                echo $Form->checkbox('regionReset', 1, 0);
+                
+            ?>
+            </div>
+        </div>
+
+<?php
+        }
 ?>
 
 

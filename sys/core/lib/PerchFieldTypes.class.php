@@ -899,9 +899,29 @@ class PerchFieldType_image extends PerchFieldType
     public function render_inputs($details=array())
     {
         $Perch = Perch::fetch();
-        $Bucket = PerchResourceBuckets::get($this->Tag->bucket());
-
         $Assets = new PerchAssets_Assets;
+
+
+        if ($this->Tag->bucket()) {
+            $Users       = new PerchUsers;
+            $CurrentUser = $Users->get_current_user();
+            $buckets = explode(' ', $this->Tag->bucket());
+            $buckets = $Assets->hydrate_bucket_list($buckets, $CurrentUser);
+            if (count($buckets)) {
+                $bucket  = $buckets[0];
+                $Bucket = PerchResourceBuckets::get($bucket);    
+            } else {
+                $Bucket = PerchResourceBuckets::get('default');
+            }
+            
+        } else {
+            $Bucket = PerchResourceBuckets::get($this->Tag->bucket());
+        }
+        
+
+
+
+        
 
         $PerchImage = new PerchImage;
         $s = $this->Form->image($this->Tag->input_id(), $this->Tag->title());

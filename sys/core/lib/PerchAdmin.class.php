@@ -40,6 +40,7 @@ class PerchAdmin extends Perch
         if (!defined('PERCH_TRANSLATION_ASSIST'))    define('PERCH_TRANSLATION_ASSIST', false);
         if (!defined('PERCH_PRIV_ASSIST'))           define('PERCH_PRIV_ASSIST', false);
         if (!defined('PERCH_CUSTOM_EDITOR_CONFIGS')) define('PERCH_CUSTOM_EDITOR_CONFIGS', false);
+        if (!defined('PERCH_ENABLE_EXIF'))           define('PERCH_ENABLE_EXIF', true);
         
     }
 

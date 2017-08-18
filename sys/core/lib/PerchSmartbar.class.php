@@ -116,7 +116,6 @@ class PerchSmartbar
 
 	private function render_tab($item)
 	{
-		$tag        = '';
 		$content    = '';
 		$data_attrs = '';
 
@@ -135,6 +134,7 @@ class PerchSmartbar
 		}
 
 		if ($item['link']) {
+			$item['link'] = urldecode($item['link']);
 			if ($item['link-absolute']) {
 				$tag = 'a[href='.$this->HTML->encode($item['link'], true).'][title='.$this->HTML->encode($title, true).']'.$data_attrs.'.viewext';
 			} else {
@@ -181,7 +181,6 @@ class PerchSmartbar
 
 	private function render_search($item)
 	{
-		$tag        = '';
 		$content    = '';
 		$data_attrs = '';
 
@@ -246,7 +245,7 @@ class PerchSmartbar
 				}
 			}
 
-			$link = $url->set_query($args)->path_with_qs_within_cp();
+			$link = urldecode($url->set_query($args)->path_with_qs_within_cp());
 			
 			$tag = 'a[href='.$this->HTML->encode(PERCH_LOGINPATH.$link, true).'].button.button-small';
 
@@ -331,7 +330,7 @@ class PerchSmartbar
 			if (PerchRequest::get($item['arg']) == $option['value']) {
 				$class = '.tab-active';
 			}
-			$content .= $this->HTML->wrap('li a[href='.$url.']'.$class, $option['title']);
+			$content .= $this->HTML->wrap('li a[href='.urldecode($url).']'.$class, $option['title']);
 		}
 
 
@@ -350,7 +349,7 @@ class PerchSmartbar
 					$icon = PerchUI::icon($action['icon'], 12).' ';
 				}
 				
-				$actions .= $this->HTML->wrap('a[href='.$url.'].button.button-small', $icon.$this->Lang->get($action['title']));
+				$actions .= $this->HTML->wrap('a[href='.urldecode($url).'].button.button-small', $icon.$this->Lang->get($action['title']));
 			}
 
 			$content .= $this->HTML->wrap('div.smartbar-actions', $actions);
@@ -361,8 +360,6 @@ class PerchSmartbar
 
 	private function render_breadcrumb($item)
 	{
-		
-		$tag = '';
 		$content = '';
 
 		$tag = 'div.breadcrumb';

@@ -1,21 +1,22 @@
 <?php
-    include(realpath(__DIR__ . '/../../..').'/inc/pre_config.php');
-    include(realpath(__DIR__ . '/../../../..').'/config/config.php');
+    include(realpath(__DIR__ . '/../../../..').'/inc/pre_config.php');
+    include(realpath(__DIR__ . '/../../../../..').'/config/config.php');
     include(PERCH_CORE . '/inc/loader.php');
     $Perch  = PerchAdmin::fetch();
     include(PERCH_CORE . '/inc/auth_light.php');
     
     $Perch->page_title = PerchLang::get('Manage Assets');
 
-    include(__DIR__.'/../PerchAssets_Asset.class.php');
-    include(__DIR__.'/../PerchAssets_Assets.class.php');
-    include(__DIR__.'/../PerchAssets_Tags.class.php');
-    include(__DIR__.'/../PerchAssets_Tag.class.php');
+    include(__DIR__.'/../../PerchAssets_Asset.class.php');
+    include(__DIR__.'/../../PerchAssets_Assets.class.php');
+    include(__DIR__.'/../../PerchAssets_Tags.class.php');
+    include(__DIR__.'/../../PerchAssets_Tag.class.php');
 
     $Paging = new PerchPaging();
     $Paging->set_per_page(64);
 
     $Assets = new PerchAssets_Assets;
+    $Settings = PerchSettings::fetch();
 
     $view         = 'grid';
     $filters = array();
@@ -44,13 +45,23 @@
         $filters['tag'] = $_GET['tag'];
     }
 
+    if (isset($_GET['buckets']) && $_GET['buckets']!='') {
+        $template_buckets = explode(' ', $_GET['buckets']);
+        $template_buckets = $Assets->hydrate_bucket_list($template_buckets, $CurrentUser);
+    } else {
+        $template_buckets = false;
+    }
+
+    if (!$Settings->get('assets_restrict_buckets')->val()) {
+        $template_buckets[] = $filters['bucket'];
+    }
+
 
     if (isset($_GET['q']) && $_GET['q']!='') {
         $term = $_GET['q'];
-
-        $assets = $Assets->search($term, $filters);
+        $assets = $Assets->search($term, $filters, $CurrentUser, $template_buckets);
     }else{
-        $assets = $Assets->get_filtered_for_admin($Paging, $filters); 
+        $assets = $Assets->get_filtered_for_admin($Paging, $filters, $CurrentUser, $template_buckets); 
     }
 
 

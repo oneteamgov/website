@@ -3,7 +3,9 @@
 class PerchResourceBucket
 {
 	protected $name;
+	protected $label;
 	protected $type;
+	protected $role;
 	protected $web_path;
 	protected $file_path;
 
@@ -19,6 +21,16 @@ class PerchResourceBucket
 		$this->type      = $details['type'];
 		$this->web_path  = $details['web_path'];
 		$this->file_path = $details['file_path'];
+
+		if (isset($details['label'])) {
+			$this->label = $details['label'];
+		} else {
+			$this->label = ucwords($this->name);
+		}
+
+		if (isset($details['role'])) {
+			$this->role = $details['role'];
+		}
 	}
 
 	public function to_array()
@@ -37,9 +49,19 @@ class PerchResourceBucket
 		return $this->name;
 	}
 
+	public function get_label()
+	{
+		return $this->label;
+	}
+
 	public function get_type()
 	{
 		return $this->type;
+	}
+
+	public function get_role()
+	{
+		return $this->role;
 	}
 
 	public function get_web_path()

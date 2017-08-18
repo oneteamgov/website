@@ -1,4 +1,5 @@
 <?php
+    $Settings = PerchSettings::fetch();
 
     // Type filter
     $types = $Assets->get_available_types();
@@ -23,16 +24,26 @@
 
 
     // Bucket filter
-    $buckets = $Assets->get_available_buckets();
+    $buckets = $Assets->get_available_buckets($CurrentUser);
+    if ($Settings->get('assets_restrict_buckets')->val()) {
+        if (isset($template_buckets) && PerchUtil::count($template_buckets)) {
+            $buckets = array_intersect($template_buckets, $buckets);
+        }    
+    } 
+    
     $bucket_options = [];
     if (PerchUtil::count($buckets)) {              
         foreach ($buckets as $bucket) {
-            $bucket_options[] = array(
-                'value'   => $bucket,
-                'title' => ucfirst($bucket),
-            );
+            $Bucket = PerchResourceBuckets::get($bucket);
+            $bucket_options[] = [
+                'value' => $Bucket->get_name(),
+                'title' => $Bucket->get_label(),
+                'privs' => $CurrentUser->get_privs_for_bucket($Bucket->get_name()),
+            ];
         }
     }
+
+
 
     // Tag filter
     $Tags = new PerchAssets_Tags();
@@ -52,7 +63,7 @@
     $Smartbar->add_item([
         'type'   => 'toggle',
         'arg'    => 'view',
-        'persist'=> ['show-filter', 'type', 'bucket', 'tag', 'q'],
+        'persist'=> ['show-filter', 'type', 'bucket', 'tag', 'q', 'buckets'],
         'options'=> [
                         [
                             'title' => 'Grid',
@@ -74,7 +85,7 @@
         'active'  => PerchRequest::get('type'),
         'type'    => 'filter',
         'arg'     => 'type',
-        'persist' => ['view', 'q'],
+        'persist' => ['view', 'q', 'buckets'],
         'options' => $type_options,
         'actions' => [
 
@@ -88,7 +99,7 @@
         'active'  => PerchRequest::get('bucket'),
         'type'    => 'filter',
         'arg'     => 'bucket',
-        'persist' => ['view', 'q'],
+        'persist' => ['view', 'q', 'buckets'],
         'options' => $bucket_options,
         'actions' => [
 
@@ -102,7 +113,7 @@
         'active'  => PerchRequest::get('tag'),
         'type'    => 'filter',
         'arg'     => 'tag',
-        'persist' => ['view', 'q'],
+        'persist' => ['view', 'q', 'buckets'],
         'options' => $tag_options,
         'actions' => [
                     [
@@ -126,3 +137,7 @@
     ]);
 
     echo $Smartbar->render();
+
+    echo '<script>';
+    echo 'if (Perch.UI.Assets) Perch.UI.Assets.setBucketOptions('.PerchUtil::json_safe_encode($bucket_options).');';
+    echo '</script>';
