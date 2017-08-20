@@ -1,0 +1,70 @@
+.c-form {
+  @include mq($until: medium) {
+    padding: 1.5rem;
+  }
+}
+
+.c-form-row {
+  display: block;
+  margin-bottom: 1.5rem;
+  &__field {
+    width: 100%;
+    @include mq($from: medium) {
+      width: 75%;
+    }
+  }
+  &__label {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.c-input-text,
+.c-input-textarea {
+  border: 2px solid #ccc;
+  width: 100%;
+  line-height: 2rem;
+}
+
+.c-input-textarea {
+  height: 150px;
+}
+
+.c-input-submit {
+  padding: 1rem 2rem;
+  min-width: 200px;
+}
+
+
+.c-form-row--radio,
+.c-form-row--checkbox {
+
+  .c-form-row {
+
+    &__field-item {
+      input {
+        margin-right: 0.5rem;
+      }
+      input,
+      label {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+  }
+
+}
+
+.c-form-row--radio-inline {
+
+  .c-form-row {
+
+    &__field-item {
+      display: inline-block;
+      margin: 0 1.5rem 1rem 0;
+      vertical-align: middle;
+    }
+
+  }
+
+}

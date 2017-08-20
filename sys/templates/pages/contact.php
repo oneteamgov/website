@@ -34,7 +34,9 @@
 
           <?php perch_content('content'); ?>
 
-          <?php perch_content('form'); ?>
+          <article class="c-form c-page-section">
+            <?php perch_content('form'); ?>
+          </article>
 
         </div>
 

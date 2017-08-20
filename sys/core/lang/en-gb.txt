@@ -380,5 +380,7 @@
     "%s%s is up to date%s": "%s%s is up to date%s",
     "Warning": "Warning",
     "This option deletes all content from this region.": "This option deletes all content from this region.",
-    "Delete all content from this region immediately": "Delete all content from this region immediately"
+    "Delete all content from this region immediately": "Delete all content from this region immediately",
+    "Reordering pages": "Reordering pages",
+    "Drag and drop the pages to reorder them.": "Drag and drop the pages to reorder them."
 }

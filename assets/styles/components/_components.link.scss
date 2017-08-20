@@ -6,7 +6,8 @@
   }
 }
 
-.c-link--button {
+.c-link--button,
+.c-input-submit {
   display: block;
   // background: lighten(#ccc,12%);
   // background: darken(#F5526D,20%);
@@ -28,12 +29,17 @@
   .c-link__inner {
     background: rgba(#000,0.1);
     padding: 0.5em 1em;
-    display: inline-block;
+    display: block;
+    @include mq($from: medium) {
+      display: inline-block;
+    }
   }
 
   &:hover {
+    cursor: pointer;
     .c-link__inner {
       background: rgba(#000,0.05);
+      cursor: pointer;
     }
   }
 

@@ -94,5 +94,6 @@
     "Editing form options": "Editing form options",
     "The file path %s is not writable by PHP.": "The file path %s is not writable by PHP.",
     "%s response": "%s response",
-    "Must be absolute system path outside site public root": "Must be absolute system path outside site public root"
+    "Must be absolute system path outside site public root": "Must be absolute system path outside site public root",
+    "Form \/ Delete response": "Form \/ Delete response"
 }

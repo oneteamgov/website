@@ -58,7 +58,7 @@
 
             </div>
             <footer class="c-page-section__footer">
-
+              <?php perch_content('Blog call to action'); ?>
             </footer>
           </article>
 

@@ -1,47 +1,58 @@
-<perch:form id="contact" method="post" app="perch_forms">
+  <perch:form id="contact" method="post" app="perch_forms">
 
-    <div class="c-form-row">
+    <h2>Contact form</h2>
+
+    <div class="c-form-row c-form-row--text">
       <div class="c-form-row__label">
         <perch:label for="name">Name</perch:label>
       </div>
       <div class="c-form-row__field">
-        <perch:input type="text" id="name" required="true" label="Name" />
+        <perch:input type="text" id="name" required="true" label="Name" class="c-input-text" />
       </div>
       <div class="c-form-row__error">
         <perch:error for="name" type="required">Please add your name</perch:error>
       </div>
     </div>
 
-    <div class="c-form-row">
-        <div class="c-form-row__label">
-          <perch:label for="email">Email</perch:label>
-        </div>
-        <div class="c-form-row__field">
-          <perch:input type="email" id="email" required="true" label="Email" />
-        </div>
-        <div class="c-form-row__error">
-          <perch:error for="email" type="required">Please add your email address</perch:error>
-          <perch:error for="email" type="format">Please check your email address</perch:error>
-        </div>
+    <div class="c-form-row c-form-row--text c-form-row--email">
+      <div class="c-form-row__label">
+        <perch:label for="email">Email</perch:label>
+      </div>
+      <div class="c-form-row__field">
+        <perch:input type="email" id="email" required="true" label="Email" class="c-input-text" />
+      </div>
+      <div class="c-form-row__error">
+        <perch:error for="email" type="required">Please add your email address</perch:error>
+        <perch:error for="email" type="format">Please check your email address</perch:error>
+      </div>
     </div>
 
-    <div class="c-form-row">
-        <div class="c-form-row__label">
-          <perch:label for="message">Message</perch:label>
-        </div>
-        <div class="c-form-row__field">
-          <perch:input type="textarea" id="message" required="true" label="Message" />
-        </div>
-        <div class="c-form-row__error">
-          <perch:error for="message" type="required">Please add a message</perch:error>
-        </div>
+    <div class="c-form-row c-form-row--textarea">
+      <div class="c-form-row__label">
+        <perch:label for="message">Message</perch:label>
+      </div>
+      <div class="c-form-row__field">
+        <perch:input type="textarea" id="message" required="true" label="Message" class="c-input-textarea" />
+      </div>
+      <div class="c-form-row__error">
+        <perch:error for="message" type="required">Please add a message</perch:error>
+      </div>
     </div>
 
-    <div class="c-form-row">
-        <perch:input type="submit" id="submit" value="Send" />
+    <div class="c-form-row c-form-row--radio c-form-row--radio-inline">
+      <div class="c-form-row__label">Would you like to subscribe to our newsletter?</div>
+      <div class="c-form-row__field">
+        <perch:input id="mailinglist" type="radio" options="Yes|yes,No|no" wrap="div.c-form-row__field-item" />
+      </div>
+    </div>
+
+    <div class="c-form-row c-form-row--submit">
+      <perch:input type="cms" />
+      <button type="submit" class="c-link c-link--button"><span class="c-link__inner">Send your message</span></button>
     </div>
 
     <perch:success>
-        <perch:content id="success" type="textarea" label="Thank you message" textile="true" editor="markitup" />
+      <perch:content id="success" type="textarea" label="Thank you message" textile="true" editor="markitup" />
     </perch:success>
+
 </perch:form>
