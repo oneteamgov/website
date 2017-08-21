@@ -382,5 +382,14 @@
     "This option deletes all content from this region.": "This option deletes all content from this region.",
     "Delete all content from this region immediately": "Delete all content from this region immediately",
     "Reordering pages": "Reordering pages",
-    "Drag and drop the pages to reorder them.": "Drag and drop the pages to reorder them."
+    "Drag and drop the pages to reorder them.": "Drag and drop the pages to reorder them.",
+    "Link text": "Link text",
+    "Link URL": "Link URL",
+    "Collection Options": "Collection Options",
+    "Editing Collection Options": "Editing Collection Options",
+    "Used for search results and draft previews. If you need this, enter the root-relative URL using %sbraces%s around any dynamic fields. e.g.": "Used for search results and draft previews. If you need this, enter the root-relative URL using %sbraces%s around any dynamic fields. e.g.",
+    "\/news-article.php?s=%sslug%s": "\/news-article.php?s=%sslug%s",
+    "This option deletes all content from this collection.": "This option deletes all content from this collection.",
+    "Delete all content from this collection immediately": "Delete all content from this collection immediately",
+    "Editing item options": "Editing item options"
 }
