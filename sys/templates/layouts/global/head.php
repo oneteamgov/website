@@ -1,3 +1,5 @@
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
 <title><?php perch_layout_var('title') ?></title>
 
 <link rel="preload" href="/public/scripts/site.js" as="script">
