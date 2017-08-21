@@ -5,3 +5,6 @@
 /public
 /sys/core/lang/en-gb.txt
 *.cache
+/sys/config/config.*.*
+/sys/core/lang/
+rsync_exclude_list.txt
