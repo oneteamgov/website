@@ -14,7 +14,7 @@
               <p><?php echo $footer_config['support']['label']; ?></p>
               <div class="o-layout o-layout--bottom c-supporters">
                 <div class="o-layout__item u-1/2 u-1/6@medium">
-                  <img src="/public/images/perch.png" alt="Perch runway">
+                  <a href="https://grabaperch.com/ref/smith31/"><img src="/public/images/perch.png" alt="Perch runway" border="0"></a>
                 </div>
               </div>
             </div>

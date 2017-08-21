@@ -94,7 +94,7 @@
         ?>
       </div>
       <div class="c-global-sidebar__section-footer">
-        <p><a href="/readinglist/" class="c-link c-link--cta">View the full reading list<svg class="icon icon-small-arrow--r"><use xlink:href="#icon-small-arrow--r"></use></svg></a></p>
+        <p><a href="/reading-list/" class="c-link c-link--cta">View the full reading list<svg class="icon icon-small-arrow--r"><use xlink:href="#icon-small-arrow--r"></use></svg></a></p>
       </div>
     </article>
     <?php endif; ?>
