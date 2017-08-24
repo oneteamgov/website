@@ -110,7 +110,7 @@
 
         <ul class="c-cta-list c-cta-list--social">
           <li class="c-cta-list__item">
-            <a href="/" class="c-cta c-cta--social c-cta--slack">
+            <a href="http://slack.oneteamgov.uk" class="c-cta c-cta--social c-cta--slack">
               <div class="c-cta__media"><img src="/public/images/slack.svg" alt=""></div><div class="c-cta__desc">Join us on slack</div>
             </a>
           </li>
