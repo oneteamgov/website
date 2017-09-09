@@ -8,10 +8,24 @@ html {
 	background: map-value($colours,(white,one));
 }
 
+.beta-note {
+	@include mq($until: medium) {
+		background-color: #FFFDA0;
+	}
+	padding: 0.15em;
+	@include mq($from: medium) {
+		border-bottom: 1px solid #ccc;
+		text-align: center;
+	}
+	p {
+		margin: 0;
+	}
+}
+
 @font-face {
 	font-family: 'otg-roman'; src: url('/assets/fonts/otg-roman.eot?#iefix') format('embedded-opentype'),
 	url('/assets/fonts/otg-roman.woff') format('woff'),
-	url('/assets/fonts/otg-roman.ttf') format('truetype'), 
+	url('/assets/fonts/otg-roman.ttf') format('truetype'),
 	url('/assets/fonts/otg-roman.svg#Charter-Roman') format('svg');
 	font-weight: normal;
 	font-style: normal;
