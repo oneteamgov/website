@@ -1,9 +1,5 @@
 <?php perch_layout('global/icons'); ?>
 
-<div class="beta-note">
-  <p>Please note: This is a beta version of our site. If you find any issues, bugs or problems. <a href="/contact/">Please let us know</a>.</p>
-</div>
-
 <header class="c-global-header">
   <div class="o-contain">
     <div class="o-layout o-layout--middle o-layout--flush">
