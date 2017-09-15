@@ -2,9 +2,12 @@
   <header class="c-page-section__header">
     <h1 class="c-page-section__heading">
 			<a href="<perch:blog id="postURL" type="hidden" />" rel="bookmark" class="c-page-section__heading-link p-name">
-					<perch:blog id="postTitle" type="text" label="Title" required="true" size="xl autowidth" order="2" />
+				<perch:blog id="postTitle" type="text" label="Title" required="true" size="xl autowidth" order="2" />
 			</a>
     </h1>
+    <perch:if exists="attribution">
+      <p class="c-page-section__subheading">By: <perch:blog id="attribution" type="text" label="Attribution name" required="false" size="m autowidth" order="3" /></p>
+    </perch:if>
   </header>
 	<perch:if exists="image">
 		<div class="c-page-section__image">
@@ -12,7 +15,9 @@
 		</div>
 	</perch:if>
   <div class="c-page-section__body">
-		<perch:blog id="postDescHTML" type="textarea" label="Post" order="4" editor="markitup" markdown="true" size="xxl autowidth" required="true" />
-    <perch:blog id="excerpt" type="textarea" label="Excerpt" markdown="true" order="3" suppress="true" size="s" required="true" />
+		<perch:blog id="postDescHTML" type="textarea" label="Post" order="5" editor="markitup" markdown="true" size="xxl autowidth" required="true" />
+    <perch:blog id="excerpt" type="textarea" label="Excerpt" markdown="true" order="4" suppress="true" size="s" required="true" />
   </div>
 </article>
+
+<perch:blog id="postDateTime" type="date" time="true" format="%d %B %Y" suppress="true" label="Post date" />

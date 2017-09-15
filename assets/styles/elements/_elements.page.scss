@@ -9,9 +9,6 @@ html {
 }
 
 .beta-note {
-	@include mq($until: medium) {
-		background-color: #FFFDA0;
-	}
 	padding: 0.15em;
 	@include mq($from: medium) {
 		border-bottom: 1px solid #ccc;
